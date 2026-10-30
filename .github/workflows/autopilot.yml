@@ -1,0 +1,25 @@
+name: 24/7 Cloud Project Forge
+
+on:
+  schedule:
+    # Runs 6 times a day (6am, 8am, 10am, 6pm, 8pm, 10pm PKT = 01:00, 03:00, 05:00, 13:00, 15:00, 17:00 UTC)
+    - cron: '0 1,3,5,13,15,17 * * *'
+  workflow_dispatch:
+
+jobs:
+  forge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Auto Project Forge
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run Cloud Autopilot Forge
+        env:
+          GH_PAT: ${{ secrets.GH_PAT || secrets.GITHUB_TOKEN }}
+        run: |
+          node engine/forge.mjs
