@@ -1,0 +1,23 @@
+{
+  "name": "auto-project-forge",
+  "version": "1.0.0",
+  "description": "24/7 Cloud Autopilot Engine: Automatically designs, builds, and publishes innovative Mobile, Windows, Cyber Security, Web, and AI projects",
+  "main": "engine/forge.mjs",
+  "type": "module",
+  "scripts": {
+    "start": "node engine/forge.mjs",
+    "test": "node engine/test.mjs"
+  },
+  "keywords": [
+    "automation",
+    "github-actions",
+    "cloud-autopilot",
+    "project-forge",
+    "mobile-apps",
+    "windows-apps",
+    "cybersecurity",
+    "ai-tools"
+  ],
+  "author": "Z-Brains Engineering",
+  "license": "MIT"
+}
